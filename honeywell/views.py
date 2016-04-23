@@ -6,9 +6,9 @@ from .models import Recipe
 
 def index(request):
     list_of_recipes = Recipe.objects.all()
-    template = loader.get_template('honeywell/index.html')
-    context = {
-        'list_of_recipes': list_of_recipes,
-    }
-    return HttpResponse(template.render(context, request))
+    context = {'list_of_recipes': list_of_recipes}
+    return render(request, 'honeywell/index.html', context)
 
+def detail(request, recipe_id):
+    recipe = Recipe.objects.get(pk=recipe_id)
+    return render(request, 'honeywell/detail.html', {'recipe': recipe})

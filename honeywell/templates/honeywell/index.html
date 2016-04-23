@@ -1,9 +1,10 @@
-<h1>Welcome to the Honeywell! Your collection of recipes</h1>
+<h1>Welcome to the Honeywell!</h1>
+<h3>Your collection of recipes</h3>
 
 {% if list_of_recipes %}
     <ul>
         {% for l in list_of_recipes %}
-            <li> {{ l.title }} </li>
+            <li><a href="{% url 'detail' l.id %}">{{ l.title }} </a></li>
         {% endfor %}
     </ul>
 {% else %}
