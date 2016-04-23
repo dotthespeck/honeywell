@@ -1,0 +1,11 @@
+<h1>Welcome to the Honeywell! Your collection of recipes</h1>
+
+{% if list_of_recipes %}
+    <ul>
+        {% for l in list_of_recipes %}
+            <li> {{ l.title }} </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>There are no recipes yet!</p>
+{% endif %}
